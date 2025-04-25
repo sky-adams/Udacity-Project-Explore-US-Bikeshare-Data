@@ -20,7 +20,7 @@ def get_filters():
     city = ''
     while True:
         city = input('For which city would you like to see data? The options are Chicago, New York City, and Washington.\n').lower()
-        if city in ['nyc', 'new york']:
+        if city in ['nyc', 'new york']: #"NYC" is an abbreviation for New York City.
             city = 'new york city'
         if city in ['chicago', 'new york city', 'washington']:
             break
