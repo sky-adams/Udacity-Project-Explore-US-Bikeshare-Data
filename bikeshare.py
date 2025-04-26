@@ -181,7 +181,7 @@ def raw_data(df):
     """ Repeatedly asks user if they would like to see 5 lines of the raw data and displays the next 5 lines until user enters 'n' or 'no' or there is no more data to display."""
     row = 0
     while row < len(df):
-        see_raw = input('\nWould you like to see 5 lines of the raw data?').lower()
+        see_raw = input('\nWould you like to see 5 lines of the raw data?\n').lower()
         if see_raw in ['y', 'yes']:
             print(df.iloc[row:row+5])
             row += 5
