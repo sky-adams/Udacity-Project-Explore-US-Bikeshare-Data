@@ -167,7 +167,7 @@ def raw_data(df):
     """ Repeatedly asks user if they would like to see 5 lines of the raw data and displays the next 5 lines until user enters 'n' or 'no' or there is no more data to display."""
     row = 0
     while row < len(df):
-        see_raw = input('\nWould you like to see 5 lines of the raw data?').lower()
+        see_raw = input('\nWould you like to see 5 lines of the raw data?\n').lower()
         if see_raw in ['y', 'yes']:
             print(df.iloc[row:row+5])
             row += 5
@@ -175,7 +175,8 @@ def raw_data(df):
             break
         else:
             print('That is not a valid response.')
-    
+    if row >= len(df):
+        print('You have reached the end of the data.')
 def main():
     while True:
         city, month, day = get_filters()
@@ -188,8 +189,8 @@ def main():
         
         raw_data(df)
         
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
+        restart = input('\nWould you like to restart?\n')
+        if restart.lower() not in ['y', 'yes']:
             break
 
 
